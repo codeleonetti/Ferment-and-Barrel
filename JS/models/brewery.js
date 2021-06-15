@@ -16,6 +16,9 @@ class Brewery {
         breweryContainer.classList.add = "breweries"
         breweryContainer.innerHTML += this.showHTML()
         breweryList.append(breweryContainer)
+        breweryContainer.addEventListener("click", function(event){
+            if (event.target.className === "beer-button") this.getBeer(event)
+        })
     }
 
     showHTML(){
@@ -25,5 +28,17 @@ class Brewery {
         <p>Location: ${this.location}</p>
         <button type="button" class="beer-button" data-id=${this.id}>Beers!</button>
         `
+    }
+
+    getBeer(){
+            fetch("http://localhost:3000/beers")
+            .then(resp => resp.json())
+            .then(beers => {
+                beers.forEach(beer => {
+                    const{id, name, style, img, abv, ibu, brewery_id} = beer
+                    new Beer(id, name, style, img, abv, ibu, brewery_id)
+                })
+            })
+        
     }
 }

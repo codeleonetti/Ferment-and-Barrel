@@ -10,10 +10,8 @@ class Beer{
 
     }
 
-    renderBeer(){
+   
 
-    }
 
-    
 
 }
