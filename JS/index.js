@@ -4,4 +4,5 @@ document.addEventListener("click", function(event){
 
 document.addEventListener("DOMContentLoaded", function(){
     API.breweryData()
+    API.beerData()
 })

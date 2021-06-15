@@ -9,4 +9,16 @@ class API {
             })
         })
     }
+
+    static beerData(){
+        fetch("http://localhost:3000/beers")
+        .then(resp => resp.json())
+        .then(beers => {
+            beers.forEach(beer => {
+                const{id, name, style, img, abv, ibu, brewery_id} = beer
+                new Beer(id, name, style, img, abv, ibu, brewery_id)
+            })
+        })
+            
+    }
 }
