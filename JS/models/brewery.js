@@ -20,8 +20,10 @@ class Brewery {
 
     showHTML(){
         return `
-        <a src="${this.img}"><h3 class="brewery">${this.name}</h3></a>
+        <img src="${this.img}">
+        <h3 class="brewery">${this.name}</h3></a>
         <p>Location: ${this.location}</p>
+        <button type="button" class="beer-button" data-id=${this.id}>Beers!</button>
         `
     }
 }
