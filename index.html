@@ -4,11 +4,21 @@
     <head>
         <title> Ferment and Barrel </title>
         <link rel="stylesheet" href="css/index.css">
-        <script type="text/javascript" src="javascript/models/show.js"></script>
-        <script type="text/javascript" src="javascript/services/API.js"></script>
-         
+        <link rel="stylesheet" href="css/grid.css">
+        <script type="text/javascript" src="JS/models/brewery.js"></script>
+        <script type="text/javascript" src="JS/services/API.js"></script>
+        <script type="text/javascript" src="JS/index.js"></script>
     </head>
     <body>
-        <h1>Yup Yup Yup Beer Beer Beer</h1>
+        <header>
+            <nav>
+                <h1>Ferment and Barrel</h1>
+                <div id="brewery-list"></div>
+                <div class="breweries">
+                    <a src="${img}"><h3 class="brewery">${this.name}</h3></a>
+                    <p>Location: ${this.location}</p>
+                </div>
+            </nav>
+        </header>
     </body>
 </html>
