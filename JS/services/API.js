@@ -4,8 +4,8 @@ class API {
         .then(resp => resp.json())
         .then(breweries =>{
             breweries.forEach(brewery => {
-                const{id, name, location, img} = brewery
-                new Brewery(id, name, location, img)
+                const{id, img, name, location} = brewery
+                new Brewery(id, img, name, location)
             })
         })
     }

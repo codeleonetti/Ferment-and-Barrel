@@ -1,9 +1,10 @@
 class Brewery {
-    constructor(id, name, location, img){
+    constructor(id, img, name, location){
         this.id = id
+        this.img = img
         this.name = name
         this.location = location
-        this.img = img
+        
         this.renderBrewery()
     }
 
@@ -19,7 +20,7 @@ class Brewery {
 
     showHTML(){
         return `
-        <a href="${img}"><h3 class="brewery">${this.name}</h3></a>
+        <a src="${this.img}"><h3 class="brewery">${this.name}</h3></a>
         <p>Location: ${this.location}</p>
         `
     }
