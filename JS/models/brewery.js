@@ -40,5 +40,5 @@ class Brewery {
                 })
             })
         
-    }
+    }// need to get beer associated with each brewery
 }

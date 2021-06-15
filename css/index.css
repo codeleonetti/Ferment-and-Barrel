@@ -8,6 +8,7 @@
 
 html {
     background-color: #d61616;
+    
     color: #262626;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
@@ -39,7 +40,8 @@ section {
 h1, 
 h2,
 h3 {
-    font-weight: 300;
+    font-weight: 700;
+    font-family: 'Alegreya', serif;
     text-transform: uppercase;
     color: rgb(0, 0, 0);
 }
@@ -48,7 +50,16 @@ h1 {
     margin-top: 0;
     margin-bottom: 20px;
     color: rgb(12, 11, 11);
-    font-size: 240%;
+    font-family: 'Courgette', cursive;
+    font-weight: bold;
+    font-size: 400%;
     word-spacing: 4px;
     letter-spacing: 1px;
+}
+
+body {
+   
+    background-image: url("https://images.unsplash.com/photo-1574713600544-ca13b5d573d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=658&q=80") ;
+    background-position: right top;
+
 }
