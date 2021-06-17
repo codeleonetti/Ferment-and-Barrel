@@ -6,8 +6,9 @@
     box-sizing: border-box;
 }
 
-html {
-    background-color: #d61616;
+body {
+   
+    /* background-color: #d61616; */
     
     color: #262626;
     font-family: 'Lato', sans-serif;
@@ -49,7 +50,7 @@ h3 {
 h1 {
     margin-top: 0;
     margin-bottom: 20px;
-    color: rgb(12, 11, 11);
+    color: rgb(3, 0, 0);
     font-family: 'Courgette', cursive;
     font-weight: bold;
     font-size: 400%;
@@ -57,9 +58,24 @@ h1 {
     letter-spacing: 1px;
 }
 
-body {
-   
-    background-image: url("https://images.unsplash.com/photo-1574713600544-ca13b5d573d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=658&q=80") ;
-    background-position: right top;
+.title {
+    padding: 15px;
+    text-align: center;
+}
 
+/* #ferment-title {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../images/keg-and-barrel.jpg") repeat 0 0 ;
+}
+
+#barrel-title {
+    
+} */
+
+#header {
+    background-image: url("/Users/johnleonetti/Development/code/mod-4/JSproject/JS-frontend/ferment-and-barrel/images/hops.jpg");
+    text-align: center;
+}
+
+.barrel-image {
+    width: 500px;
 }

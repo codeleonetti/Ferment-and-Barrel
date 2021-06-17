@@ -16,8 +16,8 @@ class Brewery {
         breweryContainer.classList.add = "breweries"
         breweryContainer.innerHTML += this.showHTML()
         breweryList.append(breweryContainer)
-        breweryContainer.addEventListener("click", function(event){
-            if (event.target.className === "beer-button") this.getBeer(event)
+        breweryContainer.addEventListener("click", e =>{
+            if (e.target.className === "beer-button") this.getBeer(e)
         })
     }
 
@@ -30,8 +30,9 @@ class Brewery {
         `
     }
 
-    getBeer(){
-            fetch("http://localhost:3000/beers")
+    getBeer(event){
+        let id = event.target.dataset.id
+            fetch(`http://localhost:3000/breweries/${id}/beers`)
             .then(resp => resp.json())
             .then(beers => {
                 beers.forEach(beer => {
