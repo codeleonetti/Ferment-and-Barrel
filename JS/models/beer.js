@@ -7,17 +7,29 @@ class Beer{
         this.abv = abv
         this.ibu = ibu
         this.brewery_id = brewery_id
-        this.getBeer()
+        this.renderBeer()
+    }
+
+    renderBeer(){
+        const beerList = document.getElementById("beer-list")
+        const beerContainer = document.createElement("div")
+        // TODO This is for edit 
+        // breweryContainer.dataset.id = this.id 
+        // breweryContainer.id = this.id
+        beerContainer.classList.add = "beers"
+        beerContainer.innerHTML += this.showBeer()
+        beerList.append(beerContainer)
     }
 
     showBeer(){
         return `
-        <img src="${this.img}">
-        <p> Beer:${this.name}</P>
-        <p>Style: ${this.style}</p>
-        <p>Abv: ${this.abv}</p>
-        <p>Ibu: ${this.ibu}</p>
-        <button type="button" class="beer-button" data-id=${this.id}>Beers!</button>
+        <div class="beer-text floatable marginable">
+            <img class="floatable margin-right" src="${this.img}">
+            <h4 class="floatable margin-right"> beer:${this.name}</h4>
+            <p class="floatable margin-right">Style: ${this.style}</p>
+            <p class="floatable margin-right">Abv: ${this.abv}</p>
+            <p class="floatable margin-right">Ibu: ${this.ibu}</p>
+        </div>
         `
     }
 

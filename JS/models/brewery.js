@@ -1,3 +1,4 @@
+
 class Brewery {
     constructor(id, img, name, location){
         this.id = id
@@ -15,23 +16,34 @@ class Brewery {
         breweryContainer.id = this.id
         breweryContainer.classList.add = "breweries"
         breweryContainer.innerHTML += this.showHTML()
-        breweryList.append(breweryContainer)
-        breweryContainer.addEventListener("click", e =>{
-            if (e.target.className === "beer-button") this.getBeer(e)
+        //breweryList.append(breweryContainer)
+        breweryContainer.addEventListener("click", e =>{ console.log(e)
+            if (e.target.className === "beer-button") 
+            {console.log(e);this.getBeer(e)}
         })
+        breweryList.append(breweryContainer)
     }
 
     showHTML(){
         return `
-        <img src="${this.img}">
-        <h3 class="brewery">${this.name}</h3></a>
-        <p>Location: ${this.location}</p>
-        <button type="button" class="beer-button" data-id=${this.id}>Beers!</button>
+        <div class="brewery-line floatable marginable">
+            <div class="brewery-image">
+                <img src="${this.img}">
+            </div>
+            <div class="brewery-text">
+                <h3 class="brewery">${this.name}</h3>
+                <p>Location: ${this.location}</p>
+            </div>
+            <button type="button" class="beer-button" data-id=${this.id}>Beers!</button>
+            <div class="beer-list floatable marginable">
+            </div>
+            
+        </div>
         `
     }
 
-    getBeer(event){
-        let id = event.target.dataset.id
+    getBeer(e){
+        let id = e.target.dataset.id
             fetch(`http://localhost:3000/breweries/${id}/beers`)
             .then(resp => resp.json())
             .then(beers => {
@@ -39,7 +51,7 @@ class Brewery {
                     const{id, name, style, img, abv, ibu, brewery_id} = beer
                     new Beer(id, name, style, img, abv, ibu, brewery_id)
                 })
+            
             })
-        
     }// need to get beer associated with each brewery
 }
