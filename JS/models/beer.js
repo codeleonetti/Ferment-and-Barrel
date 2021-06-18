@@ -18,6 +18,10 @@ class Beer{
         // breweryContainer.id = this.id
         beerContainer.classList.add = "beers"
         beerContainer.innerHTML += this.showBeer()
+        beerContainer.addEventListener("click", e => {
+            if(e.target.className === "edit-button")
+            {console.log(e);this.getBeer(e)}
+        })
         beerList.append(beerContainer)
     }
 
@@ -29,10 +33,13 @@ class Beer{
             <p class="floatable margin-right">Style: ${this.style}</p>
             <p class="floatable margin-right">Abv: ${this.abv}</p>
             <p class="floatable margin-right">Ibu: ${this.ibu}</p>
+            <button type="button" class="edit-button" data-id=${this.id}>Edit Beer!</button>
         </div>
         `
     }
 
+    editBeer(){
 
+    }
 
 }

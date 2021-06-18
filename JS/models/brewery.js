@@ -35,6 +35,7 @@ class Brewery {
                 <p>Location: ${this.location}</p>
             </div>
             <button type="button" class="beer-button" data-id=${this.id}>Beers!</button>
+            <button type="button" class="edit-button" data-id=${this.id}>Edit Beer!</button>
             <div class="beer-list floatable marginable">
             </div>
             

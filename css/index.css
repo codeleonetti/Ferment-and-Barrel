@@ -10,7 +10,7 @@ body {
    
      background-color: #6b310a; 
     
-    color: #030303;
+    color: #f0e7e7;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     font-size: 20px;
@@ -45,7 +45,7 @@ h3 {
     font-weight: 700;
     font-family: 'Alegreya', serif;
     text-transform: uppercase;
-    color: rgb(0, 0, 0);
+    color: rgb(233, 15, 15);
 }
 
 h1 {
@@ -93,6 +93,10 @@ h1 {
 }
 .beer-button {
     float: right;
+}
+.edit-button {
+    float:right;
+    margin: 10px;
 }
 .margin-right {
     margin-right: 10px;
