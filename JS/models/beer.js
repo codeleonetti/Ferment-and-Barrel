@@ -12,10 +12,10 @@ class Beer{
 
     renderBeer(){
         const beerList = document.getElementById("beer-list")
+        beerList.innerHTML = "";
         const beerContainer = document.createElement("div")
-        // TODO This is for edit 
-        // breweryContainer.dataset.id = this.id 
-        // breweryContainer.id = this.id
+        beerContainer.dataset.id = this.id 
+        beerContainer.id = this.id
         beerContainer.classList.add = "beers"
         beerContainer.innerHTML += this.showBeer()
         beerContainer.addEventListener("click", e => {
@@ -33,13 +33,43 @@ class Beer{
             <p class="floatable margin-right">Style: ${this.style}</p>
             <p class="floatable margin-right">Abv: ${this.abv}</p>
             <p class="floatable margin-right">Ibu: ${this.ibu}</p>
-            <button type="button" class="edit-button" data-id=${this.id}>Edit Beer!</button>
+            
         </div>
         `
     }
 
-    editBeer(){
+
+
+    editBeer(e){
+
+        const beerCollection = document.querySelector("#beer-list")
+
+        beerCollection.addEventListener("click", event => {
+            event.preventDefault();
+            
+            if(event.target.matches(".edit-button")) {
+                const editForm = document.createElement("form")
+
+                editForm.innerHTML = `
+                
+                <h3> Edit Beer <h3>
+                <form class="edit-form">
+                <br>
+                <h5>Beer Name:</h5>
+                <input type = "text" name="name"
+
+                
+                `
+                console.log(editForm)
+            }
+        })
+        const id = e.target.dataset>id
+            fetch(`http://localhost:3000/beers/${id}`)
+            .then(resp => resp(json))
+            .then.then(console(log))
+        
 
     }
+
 
 }

@@ -78,7 +78,7 @@ h1 {
 }
 
 .floatable {
-    float: right;
+    float: left;
 }
 .marginable {
     margin: 20px;
@@ -87,12 +87,26 @@ h1 {
     float: left;
     width: 20%;
 }
+
+
 .brewery-image {
-    width: 20px;
     float: left;
+    width: 110px;
+   
+    object-fit: scale-down;
+    
+}
+
+.brewery-image img {
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 .beer-button {
-    float: right;
+    text-align: center;
+    /* fiddle with floating button and img
+ */
 }
 .edit-button {
     float:right;
@@ -126,4 +140,16 @@ h1 {
 
 .barrel-image {
     width: 500px;
+}
+.container {
+ text-align: center;
+ border:#f0e7e7 solid 2px;
+ height: auto;
+ padding: 5px;
+}
+#submit {
+    text-align: center;
+   }
+.add-brewery-form {
+
 }

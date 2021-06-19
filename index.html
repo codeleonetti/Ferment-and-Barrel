@@ -14,20 +14,44 @@
             <div id="header">
                 <h1>Ferment and Barrel</h1>
             </div>
-          <!-- <div class="row" id="header"> 
-                <h1 class="col span-1-of-3 title" id="ferment-title">Ferment</h1>
-                <h1 class="col span-1-of-3 title">and</h1>
-                <h1 class="col span-1-of-3 title" id="barrel-title">Barrel</h1>
-            </div> -->
+          
             
             <!--css box model float left (homework)
             you can have div inside of div-->
+            
+             <!-- TODO fix form style -->
+            <div class="container">
+                <h3>Add a Brewery</h3>
+                <form id="add-brewery-form">
+                <label>Brewery Image:</label>
+                <input id="image" class="input-text-image" type="text" name="image" value="" placeholder="" />
+                <br>        
+                <label>Brewery Name:</label>
+                <input id="name"
+                type="text"
+                name="name"
+                value=""
+                placeholder="enter beer name"
+                class="input-text"
+                />
+                <br>
+                <label>Brewery Location:</label>
+                <input id="location"
+                type="text"
+                name="location"
+                value=""
+                placeholder="enter beer name"
+                class="input-text"
+                />
+                <br>
+                <input value="Add Brewery" type="submit" id="submit"/>
+                </form>
+            </div>
             <div id="main-context"> 
                 <div id="brewery-list"></div>
                 <div id="beer-list"></div>
             </div>  
             
-              
 
         
     </body>

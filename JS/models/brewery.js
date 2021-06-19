@@ -5,8 +5,9 @@ class Brewery {
         this.img = img
         this.name = name
         this.location = location
-        
+        this.createBrewery()
         this.renderBrewery()
+        this.deleteBrewery()
     }
 
     renderBrewery(){
@@ -29,13 +30,13 @@ class Brewery {
         <div class="brewery-line floatable marginable">
             <div class="brewery-image">
                 <img src="${this.img}">
+                <button type="button" class="beer-button" data-id=${this.id}>Beers!</button>
+                <button type="button" class="delete-button" data-id=${this.id}>Delete</button>
             </div>
             <div class="brewery-text">
                 <h3 class="brewery">${this.name}</h3>
                 <p>Location: ${this.location}</p>
             </div>
-            <button type="button" class="beer-button" data-id=${this.id}>Beers!</button>
-            <button type="button" class="edit-button" data-id=${this.id}>Edit Beer!</button>
             <div class="beer-list floatable marginable">
             </div>
             
@@ -55,4 +56,48 @@ class Brewery {
             
             })
     }// need to get beer associated with each brewery
+
+    createBrewery(){
+
+        const newBreweryContainer = document.getElementById("submit")
+        
+        newBreweryContainer.addEventListener("click", e => { console.log(e)
+           {
+                const newImage = document.getElementById("image")
+                const newName = document.getElementById("name")
+                const newLocation = document.getElementById("location")
+                let json = JSON.stringify({
+                    "img": newImage.value,
+                    "name": newName.value,
+                    "location": newLocation.value
+                })
+              
+         API.postNewBeer(json)
+            }
+        })
+    }
+
+    document.addEventListener("click", function(e){
+        const delBtn = document.getElementById("delete-button")
+            if (e.target === delBtn){
+                Brewery.deleteBrewery(this.id);
+            }
+    })   
+
+    deleteBrewery(id){
+
+        fetch(`http://localhost:3000/brewery/${id}`, {
+            method: 'DELETE',
+            headers: {'Content-Type': 'application/json'
+            }
+        })
+        .then(resp => resp.json())
+        .then(data => {
+            renderBrewery(data)
+        })
+
+    }
+
+    
+
 }

@@ -10,7 +10,20 @@ class API {
         })
     }
 
-    
+    static postNewBeer(json){
+        fetch ( "http://localhost:3000/breweries",{
+        method: "POST",
+        headers: { "Content-Type": "application/json"},
+        body: json
+           
+
+        })
+        .then(response => response.json())
+        .then(newbrew => {console.log(newbrew);
+        })
+        
+    }
+
     // static getBeer(){
     //     //let id = e.target.dataset.id
     //         fetch(`http://localhost:3000/breweries/${id}/beers`)
