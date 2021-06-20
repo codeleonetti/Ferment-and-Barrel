@@ -5,9 +5,9 @@ class Brewery {
         this.img = img
         this.name = name
         this.location = location
-        this.createBrewery()
+        
         this.renderBrewery()
-        this.deleteBrewery()
+    
     }
 
     renderBrewery(){
@@ -21,6 +21,8 @@ class Brewery {
         breweryContainer.addEventListener("click", e =>{ console.log(e)
             if (e.target.className === "beer-button") 
             {console.log(e);this.getBeer(e)}
+            if (e.target === delBtn){
+                Brewery.deleteBrewery(breweryContainer.id)}
         })
         breweryList.append(breweryContainer)
     }
@@ -57,12 +59,13 @@ class Brewery {
             })
     }// need to get beer associated with each brewery
 
-    createBrewery(){
+   static createBrewery(){
 
         const newBreweryContainer = document.getElementById("submit")
         
         newBreweryContainer.addEventListener("click", e => { console.log(e)
-           {
+            e.preventDefault()
+            {
                 const newImage = document.getElementById("image")
                 const newName = document.getElementById("name")
                 const newLocation = document.getElementById("location")
@@ -72,17 +75,26 @@ class Brewery {
                     "location": newLocation.value
                 })
               
-         API.postNewBeer(json)
+         API.postNewBrewery(json)
+         newImage.value=""
+         newName.value=""
+         newLocation.value=""
             }
+            
+
         })
     }
 
-    document.addEventListener("click", function(e){
-        const delBtn = document.getElementById("delete-button")
-            if (e.target === delBtn){
-                Brewery.deleteBrewery(this.id);
-            }
-    })   
+    // clearForm(){
+        
+    // }
+
+    // document.addEventListener("click", function(e){
+    //     const delBtn = document.getElementById("delete-button")
+    //         if (e.target === delBtn){
+    //             Brewery.deleteBrewery(this.id);
+    //         }
+    // })   
 
     deleteBrewery(id){
 
@@ -90,12 +102,14 @@ class Brewery {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'
             }
-        })
         .then(resp => resp.json())
         .then(data => {
             renderBrewery(data)
         })
-
+        })
+       
+           
+          
     }
 
     

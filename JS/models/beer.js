@@ -40,36 +40,36 @@ class Beer{
 
 
 
-    editBeer(e){
+    // editBeer(e){
 
-        const beerCollection = document.querySelector("#beer-list")
+    //     const beerCollection = document.querySelector("#beer-list")
 
-        beerCollection.addEventListener("click", event => {
-            event.preventDefault();
+    //     beerCollection.addEventListener("click", event => {
+    //         event.preventDefault();
             
-            if(event.target.matches(".edit-button")) {
-                const editForm = document.createElement("form")
+    //         if(event.target.matches(".edit-button")) {
+    //             const editForm = document.createElement("form")
 
-                editForm.innerHTML = `
+    //             editForm.innerHTML = `
                 
-                <h3> Edit Beer <h3>
-                <form class="edit-form">
-                <br>
-                <h5>Beer Name:</h5>
-                <input type = "text" name="name"
+    //             <h3> Edit Beer <h3>
+    //             <form class="edit-form">
+    //             <br>
+    //             <h5>Beer Name:</h5>
+    //             <input type = "text" name="name"
 
                 
-                `
-                console.log(editForm)
-            }
-        })
-        const id = e.target.dataset>id
-            fetch(`http://localhost:3000/beers/${id}`)
-            .then(resp => resp(json))
-            .then.then(console(log))
+    //             `
+    //             console.log(editForm)
+    //         }
+    //     })
+    //     const id = e.target.dataset>id
+    //         fetch(`http://localhost:3000/beers/${id}`)
+    //         .then(resp => resp(json))
+    //         .then.then(console(log))
         
 
-    }
+    // }
 
 
 }

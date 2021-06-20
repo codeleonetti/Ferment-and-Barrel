@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function(){
     // API.getBeer()
 
 
-
-   
-
+    
+    //const newBreweryContainer = document.getElementById("submit")
+    Brewery.createBrewery()
 })
 

@@ -10,7 +10,7 @@ class API {
         })
     }
 
-    static postNewBeer(json){
+    static postNewBrewery(json){
         fetch ( "http://localhost:3000/breweries",{
         method: "POST",
         headers: { "Content-Type": "application/json"},
@@ -20,21 +20,12 @@ class API {
         })
         .then(response => response.json())
         .then(newbrew => {console.log(newbrew);
+            const{id, img, name, location} = newbrew
+            new Brewery(id, img, name, location)
         })
         
     }
 
-    // static getBeer(){
-    //     //let id = e.target.dataset.id
-    //         fetch(`http://localhost:3000/breweries/${id}/beers`)
-    //         .then(resp => resp.json())
-    //         .then(beers => {
-    //             beers.forEach(beer => {
-    //                 const{id, name, style, img, abv, ibu, brewery_id} = beer
-    //                 new Beer(id, name, style, img, abv, ibu, brewery_id)
-    //             })
-            
-    //         })
-    // }       
+   
    
 }
