@@ -13,6 +13,7 @@ class Brewery {
     renderBrewery(){
         const breweryList = document.getElementById("brewery-list")
         const breweryContainer = document.createElement("div")
+        // const deleteBreweries = document.getElementById("delete-button") 
         breweryContainer.dataset.id = this.id
         breweryContainer.id = this.id
         breweryContainer.classList.add = "breweries"
@@ -21,8 +22,8 @@ class Brewery {
         breweryContainer.addEventListener("click", e =>{ console.log(e)
             if (e.target.className === "beer-button") 
             {console.log(e);this.getBeer(e)}
-            if (e.target === delBtn){
-                Brewery.deleteBrewery(breweryContainer.id)}
+            if (e.target.className === "delete-button"){
+                this.deleteBrewery(breweryContainer.id)}
         })
         breweryList.append(breweryContainer)
     }
@@ -85,9 +86,7 @@ class Brewery {
         })
     }
 
-    // clearForm(){
-        
-    // }
+  
 
     // document.addEventListener("click", function(e){
     //     const delBtn = document.getElementById("delete-button")
@@ -97,18 +96,17 @@ class Brewery {
     // })   
 
     deleteBrewery(id){
-
-        fetch(`http://localhost:3000/brewery/${id}`, {
+        // const id = event.target.dataset.id
+        const byeBrewery = document.getElementById("delete-button")
+        const breweryDeleted = document.getElementById(id)
+        console.log(breweryDeleted)
+        fetch(`http://localhost:3000/breweries/${id}`, {
             method: 'DELETE',
             headers: {'Content-Type': 'application/json'
             }
+        })
         .then(resp => resp.json())
-        .then(data => {
-            renderBrewery(data)
-        })
-        })
-       
-           
+        .then( breweryDeleted.remove())      
           
     }
 
