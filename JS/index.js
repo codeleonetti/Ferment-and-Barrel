@@ -4,11 +4,7 @@ document.addEventListener("click", function(event){
 
 document.addEventListener("DOMContentLoaded", function(){
     API.breweryData()
-    // API.getBeer()
-
-
-    // Brewery.deleteBrewery()
-    //const newBreweryContainer = document.getElementById("submit")
+   
     Brewery.createBrewery()
 })
 

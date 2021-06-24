@@ -12,14 +12,12 @@ class Brewery {
 
     renderBrewery(){
         const breweryList = document.getElementById("brewery-list")
-        const breweryContainer = document.createElement("div")
-        // const deleteBreweries = document.getElementById("delete-button") 
+        const breweryContainer = document.createElement("div") 
         breweryContainer.dataset.id = this.id
         breweryContainer.id = this.id
         breweryContainer.classList.add = "breweries"
         breweryContainer.innerHTML += this.showHTML()
-        //breweryList.append(breweryContainer)
-        breweryContainer.addEventListener("click", e =>{ console.log(e)
+        breweryContainer.addEventListener("click", e =>{ console.log("I just got clicked yup")
             if (e.target.className === "beer-button") 
             {console.log(e);this.getBeer(e)}
             if (e.target.className === "delete-button"){
@@ -49,6 +47,8 @@ class Brewery {
 
     getBeer(e){
         let id = e.target.dataset.id
+        const beerList = document.getElementById("beer-list")
+        beerList.innerHTML = ""
             fetch(`http://localhost:3000/breweries/${id}/beers`)
             .then(resp => resp.json())
             .then(beers => {
@@ -58,7 +58,7 @@ class Brewery {
                 })
             
             })
-    }// need to get beer associated with each brewery
+    }
 
    static createBrewery(){
 
@@ -81,19 +81,8 @@ class Brewery {
          newName.value=""
          newLocation.value=""
             }
-            
-
         })
     }
-
-  
-
-    // document.addEventListener("click", function(e){
-    //     const delBtn = document.getElementById("delete-button")
-    //         if (e.target === delBtn){
-    //             Brewery.deleteBrewery(this.id);
-    //         }
-    // })   
 
     deleteBrewery(id){
         // const id = event.target.dataset.id

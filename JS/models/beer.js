@@ -12,17 +12,14 @@ class Beer{
 
     renderBeer(){
         const beerList = document.getElementById("beer-list")
-        beerList.innerHTML = "";
+        //beerList.innerHTML = "";
         const beerContainer = document.createElement("div")
+        beerList.append(beerContainer)
         beerContainer.dataset.id = this.id 
         beerContainer.id = this.id
         beerContainer.classList.add = "beers"
         beerContainer.innerHTML += this.showBeer()
-        beerContainer.addEventListener("click", e => {
-            if(e.target.className === "edit-button")
-            {console.log(e);this.getBeer(e)}
-        })
-        beerList.append(beerContainer)
+       
     }
 
     showBeer(){
@@ -37,39 +34,5 @@ class Beer{
         </div>
         `
     }
-
-
-
-    // editBeer(e){
-
-    //     const beerCollection = document.querySelector("#beer-list")
-
-    //     beerCollection.addEventListener("click", event => {
-    //         event.preventDefault();
-            
-    //         if(event.target.matches(".edit-button")) {
-    //             const editForm = document.createElement("form")
-
-    //             editForm.innerHTML = `
-                
-    //             <h3> Edit Beer <h3>
-    //             <form class="edit-form">
-    //             <br>
-    //             <h5>Beer Name:</h5>
-    //             <input type = "text" name="name"
-
-                
-    //             `
-    //             console.log(editForm)
-    //         }
-    //     })
-    //     const id = e.target.dataset>id
-    //         fetch(`http://localhost:3000/beers/${id}`)
-    //         .then(resp => resp(json))
-    //         .then.then(console(log))
-        
-
-    // }
-
 
 }
