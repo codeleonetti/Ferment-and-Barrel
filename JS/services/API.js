@@ -23,7 +23,7 @@ class API {
             const{id, img, name, location} = newbrew
             new Brewery(id, img, name, location)
         })
-        
+     console.log("what ever")   
     }
 
    

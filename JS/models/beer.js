@@ -12,7 +12,7 @@ class Beer{
 
     renderBeer(){
         const beerList = document.getElementById("beer-list")
-        //beerList.innerHTML = "";
+       
         const beerContainer = document.createElement("div")
         beerList.append(beerContainer)
         beerContainer.dataset.id = this.id 
