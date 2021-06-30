@@ -1,5 +1,8 @@
 
 class Brewery {
+
+    static all = [];
+
     constructor(id, img, name, location){
         this.id = id
         this.img = img
@@ -7,6 +10,7 @@ class Brewery {
         this.location = location
         
         this.renderBrewery()
+        Brewery.all.push(this)
     
     }
 
@@ -36,7 +40,7 @@ class Brewery {
             </div>
             <div class="brewery-text">
                 <h3 class="brewery">${this.name}</h3>
-                <p>Location: ${this.location}</p>
+                <p id="location">Location: ${this.location}</p>
             </div>
             <div class="beer-list floatable marginable">
             </div>
@@ -85,7 +89,7 @@ class Brewery {
     }
 
     deleteBrewery(id){
-        // const id = event.target.dataset.id
+        
         const byeBrewery = document.getElementById("delete-button")
         const breweryDeleted = document.getElementById(id)
         console.log(breweryDeleted)
@@ -99,6 +103,18 @@ class Brewery {
           
     }
 
-    
+   static sortBreweries(){
+       return Brewery.all.sort(( a, b) => {
+        if (a.name > b.name)
+            return 1;
+        if (a.name < b.name)
+            return -1;
+        return 0;
+       })
+           
+    }
+            
+       
+   
 
 }
