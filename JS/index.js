@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
     API.breweryData()
    
     Brewery.createBrewery()
-
+    Brewery.sortBreweries()
   
     const searchBar = document.getElementById("searchBar");
     
@@ -22,16 +22,12 @@ document.addEventListener("DOMContentLoaded", function(){
         console.log(filteredBreweries)
         document.getElementById('brewery-list').innerHTML= ""
         filteredBreweries.forEach(brewery => {
-            //console.log(brewery)
-            document.getElementById('brewery-list').innerHTML += brewery.showHTML()
+            brewery.renderBrewery()
         })
 
     })
 
     
-
-    // grab all breweries 
-    // sort all breweries by  abc names
 
 })
 

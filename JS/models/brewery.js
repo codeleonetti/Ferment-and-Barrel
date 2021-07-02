@@ -104,13 +104,30 @@ class Brewery {
     }
 
    static sortBreweries(){
-       return Brewery.all.sort(( a, b) => {
-        if (a.name > b.name)
-            return 1;
-        if (a.name < b.name)
-            return -1;
-        return 0;
+       let sorting = document.getElementById("sort")
+       sorting.addEventListener("click", function(){
+           console.log("hello puppet")
+        let sortedLocations = Brewery.all.sort(( a, b) => {
+            if (a.location > b.location)
+                return 1;
+            if (a.location < b.location)
+                return -1;
+            return 0;
+           })
+           document.getElementById('brewery-list').innerHTML= ""
+           sortedLocations.forEach(brewery => {
+           brewery.renderBrewery()
+
+        })
+       
+    
        })
+       
+    //    all breweries to be sorted by location
+    //    if city == spokane 
+    //    return spokane
+    //    if city == 
+
            
     }
             
